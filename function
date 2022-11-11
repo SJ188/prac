@@ -1,0 +1,16 @@
+import React from 'react'
+
+function Function() {
+  return (
+    <div>
+      <h1>This is Function Component</h1>
+      <ol>
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Pineapple</li>
+      </ol>
+    </div>
+  );
+}
+
+export default Function
