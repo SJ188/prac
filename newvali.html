@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Validation form</h1>
+    <div class="main">
+        <form action="" name="formname" onsubmit="Validation()">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username">
+            </div>
+            <br>
+            <div>
+                <label for="mail">Email:</label>
+                <input type="text" name="mail" id="mail">
+            </div>
+            <br>
+            <div>
+                <label for="pass1">Password:</label>
+                <input type="password" name="pass1" id="pass1">
+            </div>
+            <br>
+            <br>
+            <div>
+                <p>~>Username should contain atleast 1 uppercase</p>
+                <p>~>Password should contain atleast 8 characters</p>
+                <p>~>Password should contain atleast 1 lowercase</p>
+                <p>~>Password should contain atleast 1 number</p>
+                <p>~>Password should contain atleast 1 special character</p>
+            </div>
+            <input type="submit" value="Validate" id="but">
+        </form>
+    </div>
+</body>
+    <script>
+        function Validation(){
+        const data = document.formname.username.value;
+        const data1 = document.formname.pass1.value;
+        const lowercase = new RegExp('(?=.*[a-z])');
+        const uppercase = new RegExp('(?=.*[A-Z])');
+        const number = new RegExp('(?=.*[0-9])');
+        const usernamenum = new RegExp('(?=.{5,})');
+        const eightchar = new RegExp('(?=.{8,})');
+        const specialchar = new RegExp('(?=.[!@#\$%\^&\])');
+
+        if(lowercase.test(data)){
+            if(usernamenum.test(data)){
+                if(uppercase.test(data)){
+                    alert("Valid Username");
+                    document.write("Valid Username");
+                }
+            }
+        }
+        else
+        {
+            alert("Invalid Username");
+            document.write("Invalid Username");
+        }
+
+        if(eightchar.test(data1))
+        {
+            if(specialchar.test(data1))
+            {
+                if(number.test(data1))
+                {
+                    if(lowercase.test(data1))
+                    {
+                        if(uppercase.test(data1))
+                        {
+                            alert("valid Password");
+                            document.write("valid password");
+                        }
+                        else{
+                            alert("Invalid Password");
+                        }
+                    }
+            
+                }
+            
+            }
+        }
+        else
+        {
+            alert("Invalid Password");
+            document.write("Invalid password");
+        }
+    }
+    </script>
+</html>
